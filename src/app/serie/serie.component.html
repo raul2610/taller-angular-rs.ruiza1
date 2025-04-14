@@ -1,0 +1,56 @@
+<div class="container">
+  &nbsp;
+  <div class="row">
+      <div class="col-md-6">
+          <table class="table">
+              <thead>
+                  <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Channel</th>
+                      <th scope="col">Seasons</th>
+                  </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let serie of series" (click)="seleccionarSerie(serie)">
+                    <td>
+                      <dd class="negrilla">
+                        {{serie.id}}
+                      </dd>
+                    </td>
+                    <td>
+                      <dd class="columna-name">
+                        {{serie.name}}
+                      </dd>
+                    </td>
+                    <td>
+                      <dd>
+                        {{serie.channel}}
+                      </dd>
+                    </td>
+                    <td>
+                      <dd>
+                        {{serie.seasons}}
+                      </dd>
+                    </td>
+                </tr>
+              </tbody>
+          </table>
+          <div class="row justify-content-end">
+              <p class="col-12">
+                Seasons average: {{promedio}}
+              </p>
+          </div>
+      </div>
+      <div class="col-4">
+        <div *ngIf="serieSeleccionada" class="card">
+          <img class="card-img-top" [src]="serieSeleccionada.poster" [alt]="serieSeleccionada.name" width="70" height="200">
+          <div class="card-body">
+            <h3 class="card-title">{{ serieSeleccionada.name }}</h3>
+            <p class="card-text">{{ serieSeleccionada.description }}</p>
+            <a [href]="serieSeleccionada.url" class="card-url">{{ serieSeleccionada.webpage }}</a>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>

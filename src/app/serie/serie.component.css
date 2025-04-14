@@ -12,11 +12,15 @@
     margin-right: 10px;
 }
 
-.table tbody tr {
-    background-color: #dcdcdc;
+table.table > tbody > tr > td {
+    background-color: #efefef;
 }
 
 .columna-name {
     color: rgb(0, 157, 255);
     cursor: pointer;
+}
+
+.negrilla {
+    font-weight:600;
 }
